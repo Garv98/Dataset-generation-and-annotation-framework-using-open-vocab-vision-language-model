@@ -1,4 +1,4 @@
-# ANN-DL — AMSDG-HV (Adaptive Multi‑Source Dataset Generation + Hybrid Verification)
+# A Cross-Modal Dataset Generation and Annotation Framework Leveraging Open-Vocabulary Vision–Language Models
 
 Generate small-to-medium sized image datasets from the public web for ANN/DL labs.
 
