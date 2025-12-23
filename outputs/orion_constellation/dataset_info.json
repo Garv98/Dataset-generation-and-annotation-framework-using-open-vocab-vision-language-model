@@ -1,0 +1,49 @@
+{
+  "query": "orion constellation",
+  "total_images": 7,
+  "created_at": "2025-11-27T23:32:40.072500",
+  "images": [
+    {
+      "filename": "orion_constellation_0001.jpg",
+      "width": 1598,
+      "height": 2400,
+      "format": "JPEG"
+    },
+    {
+      "filename": "orion_constellation_0002.jpg",
+      "width": 1040,
+      "height": 1390,
+      "format": "JPEG"
+    },
+    {
+      "filename": "orion_constellation_0003.jpg",
+      "width": 1200,
+      "height": 675,
+      "format": "JPEG"
+    },
+    {
+      "filename": "orion_constellation_0004.png",
+      "width": 1024,
+      "height": 1024,
+      "format": "PNG"
+    },
+    {
+      "filename": "orion_constellation_0005.jpg",
+      "width": 900,
+      "height": 900,
+      "format": "JPEG"
+    },
+    {
+      "filename": "orion_constellation_0006.jpg",
+      "width": 570,
+      "height": 734,
+      "format": "JPEG"
+    },
+    {
+      "filename": "orion_constellation_0007.jpg",
+      "width": 1707,
+      "height": 2560,
+      "format": "JPEG"
+    }
+  ]
+}

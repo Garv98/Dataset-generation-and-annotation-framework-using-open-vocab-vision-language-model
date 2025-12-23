@@ -1,0 +1,55 @@
+{
+  "query": "car license plate",
+  "total": 12,
+  "created": "2025-11-28T01:24:12.535666",
+  "images": [
+    {
+      "file": "car_license_plate_0001.jpg",
+      "size": "1920x1920"
+    },
+    {
+      "file": "car_license_plate_0002.jpg",
+      "size": "2000x2000"
+    },
+    {
+      "file": "car_license_plate_0003.jpg",
+      "size": "720x477"
+    },
+    {
+      "file": "car_license_plate_0004.webp",
+      "size": "1999x1333"
+    },
+    {
+      "file": "car_license_plate_0005.jpg",
+      "size": "1500x1235"
+    },
+    {
+      "file": "car_license_plate_0006.jpg",
+      "size": "1137x923"
+    },
+    {
+      "file": "car_license_plate_0007.jpg",
+      "size": "1920x1280"
+    },
+    {
+      "file": "car_license_plate_0008.jpg",
+      "size": "1920x1079"
+    },
+    {
+      "file": "car_license_plate_0009.jpg",
+      "size": "1300x1065"
+    },
+    {
+      "file": "car_license_plate_0010.jpg",
+      "size": "1300x956"
+    },
+    {
+      "file": "car_license_plate_0011.jpg",
+      "size": "2048x1360"
+    },
+    {
+      "file": "car_license_plate_0012.jpg",
+      "size": "3845x1944"
+    }
+  ]
+}
