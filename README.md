@@ -129,4 +129,3 @@ ANN-DL/
 - **Bing/Google blocking (CAPTCHA / empty results)**: try fewer requests, wait, change query wording, or rely on API sources (SerpAPI/Unsplash).
 - **Selenium issues**: set `USE_SELENIUM=0` in `.env` to disable Selenium scraping.
 - **Slow semantic verification**: Tier-3 (Qwen2‑VL) is the most expensive step; reduce target count or run with a GPU.
-- **AWQ on Windows**: `autoawq` typically depends on `triton` (Linux-only). On Windows, use the non-AWQ model path (this repo uses `Qwen/Qwen2-VL-2B-Instruct`).
