@@ -19,13 +19,6 @@ This repo focuses on the **data side**: multi-source scraping, downloading, clea
 - **Dataset outputs**: writes curated images to `outputs/<query_slug>/` and saves metadata.
 - **Debugability**: rejected images are moved to `data/_rejected_debug/` for inspection.
 
-## Requirements
-
-- Windows 10/11
-- Python 3.9+ recommended
-- (Optional) Chrome installed if using Selenium
-- (Optional) API keys for SerpAPI / Unsplash / Flickr
-
 ## Setup (Windows)
 
 ### 1) Create & activate a virtual environment
