@@ -49,7 +49,7 @@ pip install transformers torch torchvision accelerate qwen-vl-utils python-doten
 
 Note: on most Windows machines this will run on CPU unless you have CUDA set up.
 
-### 3) Create `.env` (do not commit)
+### 3) Create `.env`
 
 Create a `.env` file in the project root:
 
