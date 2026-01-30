@@ -1,23 +1,20 @@
 # A Cross-Modal Dataset Generation and Annotation Framework Leveraging Open-Vocabulary Vision–Language Models
 
-Generate small-to-medium sized image datasets from the public web for ANN/DL labs.
-
-This repo focuses on the **data side**: multi-source scraping, downloading, cleaning, deduplication, and (optional) semantic verification.
+Generate small-to-medium image datasets from the public web for ANN/DL labs. Focuses on multi-source scraping, downloading, cleaning, deduplication, and semantic verification.
 
 ## Features
-
-- **Multi-source scraping**: aggregates URLs from multiple providers for better diversity.
-    - SerpAPI (Google Images)
-    - Unsplash API
-    - Google Images via Selenium (optional)
-    - Bing HTML fallback
-    - Flickr API (optional)
-- **Hybrid 3-tier filtering/verification** (in `scripts/pipeline.py`):
-    - Tier 1: URL/keyword heuristics (fast prefilter)
-    - Tier 2: EXIF + simple noise heuristics (rejects corrupted/likely low-quality)
-    - Tier 3: VLM semantic verification (currently **Qwen2‑VL‑2B‑Instruct**)
-- **Dataset outputs**: writes curated images to `outputs/<query_slug>/` and saves metadata.
-- **Debugability**: rejected images are moved to `data/_rejected_debug/` for inspection.
+- **Multi-source scraping**: Aggregates URLs for diversity.
+  - SerpAPI (Google Images)
+  - Unsplash API
+  - Selenium/Google Images (optional)
+  - Bing fallback
+  - Flickr API (optional)
+- **Hybrid 3-tier verification**:
+  - Tier 1: URL heuristics
+  - Tier 2: EXIF/quality checks
+  - Tier 3: Semantic VLM (CLIP default for speed; Qwen2-VL optional for accuracy)
+- **Outputs**: Curated images in `outputs/<query>/` with metadata.json.
+- **Debug**: Rejected images in `data/_rejected_debug/`.
 
 ## Setup (Windows)
 
@@ -34,7 +31,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-If you want Tier-3 semantic verification with Qwen2‑VL:
+If you want Tier-3 semantic verification (with Qwen2‑VL for better accuracy):
 
 ```powershell
 pip install transformers torch torchvision accelerate qwen-vl-utils python-dotenv
@@ -60,25 +57,23 @@ USE_SELENIUM=1
 
 ## Usage
 
-### Main pipeline (interactive)
+### Main pipeline (CLIP-based, fast)
 
 ```powershell
 cd scripts
-python pipeline.py
+python pipeline.py --query "YOUR_QUERY" --num 50 --min_size 200 --task auto
 ```
-
-You’ll be prompted for:
 
 - **Query** (e.g., `person riding bicycle`, `industrial robot arm`, `red sports car side view`)
 - **Target count** (final images to keep)
 - **Minimum image size** (basic quality filter)
 - **Task type** (auto/detection/classification/segmentation/captioning)
 
-### Quick check: is Qwen2‑VL working?
+### Accurate Variant (Qwen2-VL)
 
 ```powershell
 cd scripts
-python test_qwen.py
+python pipeline_qwen.py
 ```
 
 ### Diagnose scraping/download issues
@@ -109,7 +104,8 @@ ANN-DL/
         _rejected_debug/        # rejected images for inspection
     outputs/                  # final datasets per query
     scripts/
-        pipeline.py             # main multi-source + hybrid verification pipeline
+        pipeline.py
+        pipeline_qwen.py        # main multi-source + hybrid verification pipeline
         web_scraper.py          # standalone Bing-only scraper/downloader (older/simple)
         image_cleaner.py        # standalone cleaner/deduper (perceptual hashing)
         diagnose_pipeline.py    # stage-by-stage scraping/download diagnostic
